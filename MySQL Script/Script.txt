@@ -1,0 +1,39 @@
+CREATE DATABASE `aps3`;
+
+CREATE TABLE aps3.`admin` (
+  `id` varchar(6) NULL DEFAULT '1',
+  `senha` varchar(45) NULL DEFAULT 'admin',
+  PRIMARY KEY (`id`)
+) 
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE aps3.`booleano` (
+  `lembre` tinyint(1) NOT NULL DEFAULT '0',
+  `id` int NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE aps3.`protocolo` (
+  `id_protocolo` int NULL,
+  `cpf_cliente` varchar(11) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `historico` varchar(50) DEFAULT NULL,
+  `tipo` varchar(10) DEFAULT NULL,
+  `extrato` tinyint(1) DEFAULT '0',
+  `deposito` tinyint(1) DEFAULT '0',
+  `ID` int unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `id_UNIQUE` (`ID`),
+  UNIQUE KEY `id_protocolo_UNIQUE` (`id_protocolo`),
+  UNIQUE KEY `cpf_cliente_UNIQUE` (`cpf_cliente`),
+  KEY `fk_protocolo_usuario_idx` (`cpf_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+CREATE TABLE aps3.`usuario` (
+  `codigo_agencia` varchar(6) NULL DEFAULT 'AB12C4',
+  `cpf` varchar(11) NULL DEFAULT '0123456789',
+  `senha` varchar(45) NULL DEFAULT 'user25908',
+  `saldo` decimal(65,2) NULL DEFAULT '0.00',
+  PRIMARY KEY (`cpf`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
