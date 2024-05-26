@@ -1,4 +1,4 @@
-Atividade Praticas Supervisionada do terceiro semestre da UNIP
+Atividade Pratica Supervisionada do terceiro semestre da UNIP
 --------------------------------------------------------------------------------------
 Utilizado linguagem Java/Java Swing com a IDE NetBeans v18
 Utilizado banco de dados MySQL com MySQL Workbench
